@@ -32,7 +32,7 @@ onBeforeMount(() => combinationStore.loadCombinationsAndSetDefault())
 	<template v-else>
 		<div>
 			<div
-				class="h-cover absolute left-0 right-0 top-0"
+				class="h-cover absolute left-0 right-0 top-0 -z-10"
 				:style="{
 					backgroundColor: bgCover
 				}">

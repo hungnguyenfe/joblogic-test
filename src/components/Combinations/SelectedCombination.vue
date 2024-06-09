@@ -34,8 +34,8 @@ watch(
 </script>
 
 <template>
-	<div class="rounded-md">
-		<div class="relative bg-cover overflow-hidden">
+	<div>
+		<div class="relative bg-cover overflow-hidden rounded-t-md">
 			<div
 				class="absolute right-5 top-5 flex items-center gap-2 bg-white shadow-md p-2 rounded cursor-pointer hover:opacity-80">
 				<span
@@ -51,8 +51,17 @@ watch(
 				:alt="combinationDetail?.combination.featuredImage.alt"
 				class="w-full h-auto" />
 		</div>
-		<div class="flex h-combination-color-section">
+		<div class="flex rounded-b-md overflow-hidden">
 			<CombinationColor
+				mode="color"
+				class="flex-1"
+				v-for="(color, index) of combinationDetail?.combination.colors ?? []"
+				:key="index"
+				:color="color" />
+		</div>
+		<div class="flex overflow-hidden">
+			<CombinationColor
+				mode="text"
 				class="flex-1"
 				v-for="(color, index) of combinationDetail?.combination.colors ?? []"
 				:key="index"
